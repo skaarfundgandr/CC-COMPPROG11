@@ -2,7 +2,6 @@
 
 int main(int argc, char const *argv[])
 {
-	char operation;
 	int nums1;
 	int nums2;
 	int result;
@@ -11,28 +10,38 @@ int main(int argc, char const *argv[])
 	scanf("%d", &instances);
 	for (int instances; instances > 0; --instances)
 	{
+		char operation;
 		printf("Select an operation: \n");
 		scanf("%c", &operation);
-		printf("Input two numbers: \n");
-		scanf("%d", &nums1);
-		scanf("%d", &nums2);
-		if (operation == a)
+		if (operation == 'a')
 		{
+			printf("Input two numbers: \n");
+			scanf("%d", &nums1);
+			scanf("%d", &nums2);
 			result = nums1 + nums2;
 			printf("The sum is %d\n", result);
 		}
-		if (operation == s)
+		if (operation == 's')
 		{
+			printf("Input two numbers: \n");
+			scanf("%d", &nums1);
+			scanf("%d", &nums2);
 			result = nums1 - nums2;
 			printf("The difference is %d\n", result);
 		}
-		if (operation == m)
+		if (operation == 'm')
 		{
+			printf("Input two numbers: \n");
+			scanf("%d", &nums1);
+			scanf("%d", &nums2);
 			result = nums1 * nums2;
 			printf("The product is %d\n", result);
 		}
-		if (operation == d)
+		if (operation == 'd')
 		{
+			printf("Input two numbers: \n");
+			scanf("%d", &nums1);
+			scanf("%d", &nums2);
 			result = nums1 / nums2;
 			printf("The quotient is %d\n", result);
 		}
