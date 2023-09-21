@@ -2,10 +2,7 @@
 
 int main()
 {
-	int nums1;
-	int nums2;
-	int result;
-	int instances;
+	int nums1, nums2, result, instances;
 	char operation;
 	printf("Input the number of instances: \n");
 	scanf("%d", &instances);
