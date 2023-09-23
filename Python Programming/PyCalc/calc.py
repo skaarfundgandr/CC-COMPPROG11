@@ -1,21 +1,21 @@
 def add(x, y):
     result = x + y
-    return result
+    print(f'The sum is {result}.')
 
 
 def subtract(x, y):
     result = x - y
-    return result
+    print(f'The difference is {result}.')
 
 
 def multiply(x, y):
     result = x * y
-    return result
+    print(f'The product is {result}.')
 
 
 def divide(x, y):
     result = x / y
-    return result
+    print(f'The quotient is {result}.')
 
 
 print("Enter the number of instances: ")
@@ -51,4 +51,3 @@ while instances > 0:
         print(f"The quotient is {quotient}.")
     else:
         print("Invalid operation!")
-    pass
