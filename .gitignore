@@ -1,1 +1,4 @@
 *.exe
+*.pyc
+*.o
+/__pycache__
