@@ -1,6 +1,6 @@
 import openai
 
-print("Input the API key: ")
+print("Input OpenAI API key: ")
 openai.api_key = input()
 print("Input the file location: ")
 fileLocation = input()
