@@ -14,7 +14,7 @@ int main()
 	cout << "Enter the number of terms: ";
 	cin >> terms;
 
-	for (int i = 0; i < sizeof(terms); i++){
+	for (int i = 0; i < terms; i++){
 		terms--;
 		cout << fibonacci(terms+1) << endl;
 	}
