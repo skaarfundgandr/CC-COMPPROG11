@@ -36,11 +36,26 @@ fn main() {
             .read_line(&mut operators)
             .expect("Cannot read input!");
         match operators.as_ref() {
-            "+" => println!("The sum of {num1} and {num2} is: {}", num1 + num2),
-            "-" => println!("The difference of {num1} and {num2} is: {}", num1 - num2),
-            "*" => println!("The product of {num1} and {num2} is: {}", num1 * num2),
-            "/" => println!("The quotient of {num1} and {num2} is: {}", num1 / num2),
-            _ => println!("Invalid operation!"),
+            "add" => {
+                let sum = num1 + num2;
+                println!("The sum is {sum}");
+            }
+            "subtract" => {
+                let difference = num1 - num2;
+                println!("The difference is {difference}");
+            }
+            "multiply" => {
+                let product = num1 * num2;
+                println!("The product is {product}");
+            }
+            "divide" => {
+                let quotient = num1 / num2;
+                println!("The quotient is {quotient}");
+            }
+            _ => {
+                println!("Invalid operation!");
+                break;
+            }
         }
     }
 }
