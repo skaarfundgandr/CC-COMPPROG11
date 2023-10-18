@@ -12,9 +12,9 @@ int main()
 	int terms;
 	printf("Enter the number of terms: ");
 	scanf_s("%d", &terms);
-	for (int i = 0; i < sizeof(terms); i++) {
+	for (int i = 0; i < terms;) {
 		terms--;
-		printf("%d\n", fibonacci(terms+1));
+		printf("%d\n", fibonacci(terms));
 	}
 	return 0;
 }
