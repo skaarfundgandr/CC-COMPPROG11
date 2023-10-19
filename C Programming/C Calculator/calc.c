@@ -2,42 +2,41 @@
 
 int main()
 {
-	int nums1, nums2, result, instances;
+	int num1, num2, result, instances;
 	char operation;
 	printf("Input the number of instances: \n");
-	scanf_s("%d", &instances);
-	while (instances > 0)
+	scanf("%d", &instances);
+	for (int i = 0; i < instances; ++i)
 	{
-		--instances;
 		printf("Select an operation: \n");
-		scanf_s("%c", &operation);
+		scanf("%c", &operation);
 		switch (operation) {
 			case ('+'):
 				printf("Input two numbers: \n");
-				scanf_s("%d", &nums1);
-				scanf_s("%d", &nums2);
-				result = nums1 + nums2;
+				scanf("%d", &num1);
+				scanf("%d", &num2);
+				result = num1 + num2;
 				printf("The sum is %d\n", result);
 				break;
 			case ('-'):
 				printf("Input two numbers: \n");
-				scanf_s("%d", &nums1);
-				scanf_s("%d", &nums2);
-				result = nums1 - nums2;
+				scanf("%d", &num1);
+				scanf("%d", &num2);
+				result = num1 - num2;
 				printf("The difference is %d\n", result);
 				break;
 			case ('*'):
 				printf("Input two numbers: \n");
-				scanf_s("%d", &nums1);
-				scanf_s("%d", &nums2);
-				result = nums1 * nums2;
+				scanf("%d", &num1);
+				scanf("%d", &num2);
+				result = num1 * num2;
 				printf("The product is %d\n", result);
 				break;
 			case ('/'):
 				printf("Input two numbers: \n");
-				scanf_s("%d", &nums1);
-				scanf_s("%d", &nums2);
-				result = nums1 / nums2;
+				scanf("%d", &num1);
+				scanf("%d", &num2);
+				result = num1 / num2;
 				printf("The quotient is %d\n", result);
 				break;
 			default:
