@@ -1,12 +1,10 @@
 use std::io;
 
 fn temperature_converter(args: String, n: f64) {
-    let select = String::from(args);
-    println!("{}", select);
-    if select == "Fahrenheit" {
+    if args == "Fahrenheit" {
         let fahrenheit: f64 = 32.0 + (n * (180.0 / 100.0));
         println!("{:.1} Celsius is {:.1} Fahrenheit.", n, fahrenheit);
-    } else if select == "Celsius" {
+    } else if args == "Celsius" {
         let celsius: f64 = (100.0 / 180.0) * (n - 32.0);
         println!("{:.1} Fahrenheit is {:.1} Celsius.", n, celsius);
     } else {

@@ -1,5 +1,13 @@
 use std::io;
 
+fn get_square(num1: f64) -> f64 {
+    return num1 * num1;
+}
+
+fn square_root(num1: f64) -> f64 {
+    return num1.sqrt();
+}
+
 fn main() {
     let mut a = String::new();
     let mut b = String::new();
@@ -38,11 +46,15 @@ fn main() {
         Err(_) => todo!(),
     };
 
-    let discriminant_formula: f64 = (b * b) - (4.0 * a * c);
+    let discriminant_formula: f64 = (get_square(b)) - (4.0 * a * c);
 
-    let root1: f64 = (-b + discriminant_formula.sqrt()) / (2.0 * a);
+    if discriminant_formula != 0.0 {
+        let root1: f64 = -b + (square_root(discriminant_formula)) / (2.0 * a);
+        let root2: f64 = -b - (square_root(discriminant_formula)) / (2.0 * a);
 
-    let root2: f64 = (-b - discriminant_formula.sqrt()) / (2.0 * a);
-
-    println!("The two roots are: {:.2} and {:.2}", root1, root2);
+        println!("The two roots are {:.2} and {:.2}", root1, root2);
+    } else {
+        let root: f64 = -b + (discriminant_formula) / (2.0 * a);
+        println!("The root is {:.2}", root);
+    }
 }
