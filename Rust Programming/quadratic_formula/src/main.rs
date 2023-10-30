@@ -48,11 +48,19 @@ fn main() {
 
     let discriminant_formula: f64 = (get_square(b)) - (4.0 * a * c);
 
-    if discriminant_formula != 0.0 {
+    if discriminant_formula > 0.0 {
         let root1: f64 = -b + (square_root(discriminant_formula)) / (2.0 * a);
         let root2: f64 = -b - (square_root(discriminant_formula)) / (2.0 * a);
 
         println!("The two roots are {:.2} and {:.2}", root1, root2);
+    } else if discriminant_formula < 0.0 {
+        let discriminant_formula = discriminant_formula.abs();
+        let root1: f64 = -b + (square_root(discriminant_formula)) / (2.0 * a);
+        let root2: f64 = -b - (square_root(discriminant_formula)) / (2.0 * a);
+        println!(
+            "The roots are imaginary!\nThe roots are {:.2}i and {:.2}i",
+            root1, root2
+        );
     } else {
         let root: f64 = -b + (discriminant_formula) / (2.0 * a);
         println!("The root is {:.2}", root);
