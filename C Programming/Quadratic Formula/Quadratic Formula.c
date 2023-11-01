@@ -19,13 +19,13 @@ int main(int argc, char const *argv[])
 	if (discriminantFormula != 0.0)
 	{
 		printf("There are two roots these are: \n");
-		root1 = -b + ((sqrt(discriminantFormula)) / (2.0 * a));
-		root2 = -b - ((sqrt(discriminantFormula)) / (2.0 * a));
+		root1 = -b + ((getSquareRoot(discriminantFormula)) / (2.0 * a));
+		root2 = -b - ((getSquareRoot(discriminantFormula)) / (2.0 * a));
 		printf("First root:\t%lf\nSecond root:\t%lf\n", root1, root2);
 	}
 	else{
 		printf("There is only one root: \n");
-		root = -b + ((sqrt(discriminantFormula)) / (2.0 * a));
+		root = -b + ((getSquareRoot(discriminantFormula)) / (2.0 * a));
 		printf("The root is:\t%lf\n", root);
 	}
 	return 0;
