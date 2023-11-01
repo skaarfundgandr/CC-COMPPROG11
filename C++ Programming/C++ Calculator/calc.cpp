@@ -7,8 +7,7 @@ int main()
 	char operation;
 	cout << "Input the number of instances" << endl;
 	cin >> instances;
-	while (instances > 0) {
-		--instances;
+	for (int i = 1; i < instances; i++) {
 		cout << "input an operation" << endl;
 		cin >> operation;
 		switch (operation) {
