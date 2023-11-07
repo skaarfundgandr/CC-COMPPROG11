@@ -1,21 +1,27 @@
 #include <stdio.h>
 
-float roundOff(float num);
+double roundOff(double num);
 
-int main(int argc, char const *argv[])
+int main()
 {
-	float input, result;
+	double input, result;
 	printf("Enter a number:\n");
-	scanf("%f", &input);
+	scanf("%lf", &input);
 
 	result = roundOff(input);
-	printf("%f rounded off to the nearest hundredths is: %.2f\n", input, result);
+	printf("%lf rounded off to the nearest hundredths is: %.6lf\n", input, result);
 	return 0;
 }
 
-float roundOff(float num){
+double roundOff(double num){
+	if (num >= 0.05) {
+		num = num * 100;
+		num = (int) num / 100.0;
+		num += 0.01;
+	}
+	else {
 	num = num * 100;
 	num = (int) num / 100.0;
-
+	}
 	return num;
 }
