@@ -24,10 +24,11 @@ int main(int argc, char const *argv[])
 		root2 = -b - ((getSquareRoot(discriminantFormula)) / (2.0 * a));
 		printf("First root:\t%lf\nSecond root:\t%lf\n", root1, root2);
 	}
- else if (discriminantFormula > 0.0) {
-  root1 = -b + ((getSquareRoot(discriminantFormula)) / (2.0 * a));
+	else if (discriminantFormula > 0.0) {
+  		root1 = -b + ((getSquareRoot(discriminantFormula)) / (2.0 * a));
 		root2 = -b - ((getSquareRoot(discriminantFormula)) / (2.0 * a));
-  printf("The roots are imaginary!\nThese are %.2lfi and %.2lfi\n");
+  		printf("The roots are imaginary!\nThese are %.2lfi and %.2lfi\n");
+  	}
 	else{
 		printf("There is only one root: \n");
 		root = -b + ((getSquareRoot(discriminantFormula)) / (2.0 * a));
