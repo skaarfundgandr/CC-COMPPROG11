@@ -1,0 +1,1 @@
+/mnt/d/programs/git/cc-compprog11/Rust\ Programming/Functional\ Programming/operation_on_triangles/target/debug/operation_on_triangles: /mnt/d/programs/git/cc-compprog11/Rust\ Programming/Functional\ Programming/operation_on_triangles/src/main.rs
