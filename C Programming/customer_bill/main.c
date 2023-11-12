@@ -1,9 +1,9 @@
 #include <stdio.h>
-
+// Tax rate and labor are constants that will be used
+// on multiple functions so it should be a defined constant
 #define TAX_RATE 0.085
 #define LABOR_COST 0.35
 
-int getArea(int ln, int wd);
 double getCarpetCharge(int area, double cost);
 double getLaborCharge(int area);
 double getDiscount(int discount, double price);
@@ -28,6 +28,9 @@ int main()
 	printf("\nCost per square foot (xxx.xx) ?\t");
 	scanf("%lf", &costPerSqrFoot);
 	
+	// Note that ordering is important since the compiler reads your code from top to bottom.
+	// DO NOT USE A VARIABLE THAT HAS NOT BEEN INITIALIZED FIRST
+	
 	area = length * width;
 	carpetCharge = getCarpetCharge(area, costPerSqrFoot);
 	laborCharge = getLaborCharge(area);
@@ -36,7 +39,7 @@ int main()
 	subTotal = getTotalAmt(installedPrice, discount);
 	tax = getTax(subTotal);
 	totalCost = getTotalAmt(subTotal, tax);
-
+	// OUTPUT
 	printf("\n\t\tMEASUREMENT\t\t\n\nLength\t\t\t\t%5d ft\n", length);
 	printf("Width\t\t\t\t%5d ft\n", width);
 	printf("Area\t\t\t\t%5d ft\n\n", area);
@@ -56,17 +59,27 @@ int main()
 }
 
 double convToPercent(int percent){
+	// Converts the input to a double and then divides it by 100.0 to convert it to a decimal
 	return (double) percent / 100.0;
 }
 
 double getCarpetCharge(int area, double cost){
+	// Since the data type of area is an integer, convert it to a double first to make
+	// sure that the output would be accurate
 	return (double) area * cost;
 }
 
 double getLaborCharge(int area){
+	// This function takes an integer as an input and then multiplies it to a double
+	// so it should be converted to a double first.
 	return (double) area * LABOR_COST;
 }
+
 double getDiscount(int discount, double price){
+	// This function calls the output of another function to process its input
+	// despite the inputs being two different data types (int and double)
+	// converting the int to double is unnecessary since the function convToPercent
+	// returns a double
 	return convToPercent(discount) * price;
 }
 
