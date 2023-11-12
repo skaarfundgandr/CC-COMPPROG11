@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 #define TAX_RATE 0.085
 #define LABOR_COST 0.35
 
