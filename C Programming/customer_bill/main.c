@@ -49,7 +49,7 @@ int main()
 	printf("Labor\t\t%9.2lf\t%8.2lf\n", LABOR_COST, laborCharge);
 	printf("\t\t\t\t----------\n");
 	printf("INSTALLED PRICE\t\t\t%8.2lf\n", installedPrice);
-	printf("Discount\t%9d\t%8.2lf\n", custDiscount, discount);
+	printf("Discount\t%9d%%\t%8.2lf\n", custDiscount, discount);
 	printf("-----------\t-----------\t----------\n");
 	printf("SUBTOTAL\t\t\t%8.2lf\n", subTotal);
 	printf("Tax\t\t\t\t%8.2lf\n", tax);
