@@ -1,5 +1,6 @@
 *.exe
 *.pyc
 *.o
+*.save
 /__pycache__
 /target
