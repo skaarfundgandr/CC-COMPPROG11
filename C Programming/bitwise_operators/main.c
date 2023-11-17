@@ -14,16 +14,32 @@ int main()
 
 void calculateTheMaximum(int n, int k){
   int a, calcAND, calcOR, calcXOR, maxAND, maxOR, maxXOR;
-    for (int i = 0; i < n; ++i)
+  maxAND = maxOR = maxXOR = 0;
+  for (int i = 2; i < n; ++i)
+  {
+    if (i == 2)
     {
-      a = i - 1;
-      calcAND = a & i;
-      calcOR = a | i;
-      calcXOR = a ^ i;
-      (calcAND > maxAND && calcAND < k) ? maxAND = calcAND : maxAND;
-      (calcOR > maxOR && calcOR < k) ? maxOR = calcOR : maxOR;
-      (calcXOR > maxXOR && calcXOR < k) ? maxXOR = calcXOR : maxXOR;
+      a = i;
     }
-    printf("%d\n%d\n%d\n", maxAND, maxOR, maxXOR);
-    return;
+    else {
+      a = i - 1;
+    }
+    calcAND = a & i;
+    calcOR = a | i;
+    calcXOR = a ^ i;
+    if (calcAND > maxAND && calcAND < k)
+    {
+      maxAND = calcAND;
+    }
+    if (calcOR > maxOR && calcOR < k)
+    {
+      maxOR = calcOR;
+    }
+    if (calcXOR > maxXOR && calcXOR < k) 
+    {
+      maxXOR = calcXOR;
+    }
+  }
+  printf("%d\n%d\n%d\n", maxAND, maxOR, maxXOR);
+  return;
 }
