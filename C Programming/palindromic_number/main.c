@@ -6,7 +6,7 @@ int main()
 	printf("Enter a 3 digit number:\n");
 	scanf("%d", &num);
 
-	if (num < 100 | num > 999){
+	if (num < 100 || num > 999){
 		printf("Invalid input!\n");
 	}
 
