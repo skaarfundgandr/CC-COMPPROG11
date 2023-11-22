@@ -24,6 +24,9 @@ int main()
 	else if (angle == 270.0){
 		printf("The line is on the negative Y-axis.\n");
 	}
+	else if (angle < 0){
+		printf("Input must be positive!\n");
+	}
 	else{
 		quadrant = checkQuadrant(angle);
 		printf("The line is on quadrant %d\n.", quadrant);
