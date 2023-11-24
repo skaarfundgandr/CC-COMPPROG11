@@ -16,13 +16,13 @@ int main()
 	char vehicleType;
 	int hourEntered, hourLeft, minuteEntered, minuteLeft, roundedTotal, totalCharge;
 
-	printf("Type of vehicle? ");
+	printf("Type of vehicle?\t\t\t");
 	scanf("%c", &vehicleType);
 	printf("\nHour vehicle entered lot (0 - 24)?\t");
 	scanf("%d", &hourEntered);
 	printf("\nMinute vehicle entered lot (0 - 60)?\t");
 	scanf("%d", &minuteEntered);
-	printf("\nHour vehicle left lot (0 - 24)?\t");
+	printf("\nHour vehicle left lot (0 - 24)?\t\t");
 	scanf("%d", &hourLeft);
 	printf("\nMinute vehicle left lot (0 - 60)?\t");
 	scanf("%d", &minuteLeft);
@@ -31,7 +31,16 @@ int main()
 	roundedTotal = getRoundedTotal(parkingHour, parkingMinute);
 	getVehicle(vehicleType);
 	totalCharge = getTotalCharge(getRate(vehicleType), roundedTotal);
-	
+
+	printf("\t\tPARKING LOT CHARGE\t\t\n\n");
+	printf("Type of vehicle:\t\t%s\n", vehicle);
+	printf("TIME-IN\t\t\t\t%2d:%2d\n", hourEntered, minuteEntered);
+	printf("TIME-OUT\t\t\t%2d:%2d\n", hourLeft, minuteLeft);
+	printf("\t\t\t\t--------\n");
+	printf("PARKING TIME\t\t\t%2d:%2d\n", parkingHour, parkingMinute);
+	printf("ROUNDED TOTAL\t\t\t%5d\n", roundedTotal);
+	printf("\t\t\t\t--------\n");
+	printf("TOTAL CHARGE\t\t\t$%4.2d\n", totalCharge);	
 
 	return 0;
 }
@@ -50,7 +59,7 @@ void getParkingTime(int hourEntered, int hourLeft, int minuteEntered, int minute
 }
 
 int getRoundedTotal(int hour, int minute){
-	if (minute <= 30){
+	if (minute >= 30){
 		return ++hour;
 	}
 	else{
@@ -88,7 +97,7 @@ int getRate(char type){
 double getTotalCharge(int rate, int total){
 	switch (rate) {
 		case 1:
-			if (total <= 3.0){
+			if (total <= 3){
 				return 0.0;
 				break;
 			}
@@ -98,7 +107,7 @@ double getTotalCharge(int rate, int total){
 			}
 			break;
 		case 2:
-			if (total <= 2.0){
+			if (total <= 2){
 				return 1.0;
 				break;
 			}
@@ -108,7 +117,7 @@ double getTotalCharge(int rate, int total){
 			}
 			break;
 		case 3:
-			if (total == 1.0){
+			if (total <= 1){
 				return 2.0;
 				break;
 			}
@@ -118,8 +127,8 @@ double getTotalCharge(int rate, int total){
 			}
 			break;
 		default:
+			return 0;
 			break;
 
 	}
-	return 0;
 }
