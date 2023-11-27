@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#define MAX_LEN	50
+#define MAX_LEN 50
 
 int parkingHour, parkingMinute;
 char vehicle[MAX_LEN];
