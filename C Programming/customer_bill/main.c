@@ -36,7 +36,7 @@ int main()
 	laborCharge = getLaborCharge(area);
 	installedPrice = getTotalAmt(carpetCharge, laborCharge);
 	discount = getDiscount(custDiscount, installedPrice);
-	subTotal = getTotalAmt(installedPrice, discount);
+	subTotal = installedPrice - discount;
 	tax = getTax(subTotal);
 	totalCost = getTotalAmt(subTotal, tax);
 	// OUTPUT
