@@ -1,13 +1,10 @@
 #include <stdio.h>
-#include <string.h>
-#define MAX_LEN 50
 
 int parkingHour, parkingMinute;
-char vehicle[MAX_LEN];
 
 int getRoundedTotal(int hour, int minute);
 void getParkingTime(int hourEntered, int hourLeft, int minuteEntered, int minuteLeft);
-void getVehicle(char type);
+void printVehicleType(char type);
 int getRate(char type);
 double getTotalCharge(int rate, int total);
 
@@ -30,18 +27,17 @@ int main()
 
 	getParkingTime(hourEntered, hourLeft, minuteEntered, minuteLeft);
 	roundedTotal = getRoundedTotal(parkingHour, parkingMinute);
-	getVehicle(vehicleType);
 	totalCharge = getTotalCharge(getRate(vehicleType), roundedTotal);
 
-	printf("\t\tPARKING LOT CHARGE\n\n");
-	printf("Type of vehicle: %s\n", vehicle);
+	printf("\tPARKING LOT CHARGE\n\n");
+	printVehicleType(vehicleType);
 	printf("TIME-IN\t\t\t%02d:%02d\n", hourEntered, minuteEntered);
 	printf("TIME-OUT\t\t%02d:%02d\n", hourLeft, minuteLeft);
-	printf("\t\t\t\t--------\n");
+	printf("\t\t\t--------\n");
 	printf("PARKING TIME\t\t%02d:%02d\n", parkingHour, parkingMinute);
 	printf("ROUNDED TOTAL\t\t%5d\n", roundedTotal);
 	printf("\t\t\t--------\n");
-	printf("TOTAL CHARGE\t\t$%4.2lf\n", totalCharge);
+	printf("TOTAL CHARGE\t\t$%4.2lf\n", totalCharge);	
 
 	return 0;
 }
@@ -68,15 +64,15 @@ int getRoundedTotal(int hour, int minute){
 	}
 }
 
-void getVehicle(char type){
+void printVehicleType(char type){
 	if (type == 'C' || type == 'c'){
-		strcpy(vehicle, "Car");
+		printf("Type of vehicle: Car\n");
 	}
-	else if (type == 'B' || type == 'b') {
-		strcpy(vehicle, "Bus");
+	if (type == 'B' || type == 'b') {
+		printf("Type of vehicle: Bus\n");
 	}
-	else if (type == 'T' || type == 't') {
-		strcpy(vehicle, "Truck");
+	if (type == 'T' || type == 't') {
+		printf("Type of vehicle: Truck\n");
 	}
 }
 
