@@ -1,12 +1,12 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int parkingHour, parkingMinute;
 
 int getRoundedTotal(int hour, int minute);
 void getParkingTime(int hourEntered, int hourLeft, int minuteEntered, int minuteLeft);
 void printVehicleType(char type);
-int getRate(char type);
-double getTotalCharge(int rate, int total);
+double getTotalCharge(char vehicleType, int total);
 
 int main()
 {
@@ -27,7 +27,7 @@ int main()
 
 	getParkingTime(hourEntered, hourLeft, minuteEntered, minuteLeft);
 	roundedTotal = getRoundedTotal(parkingHour, parkingMinute);
-	totalCharge = getTotalCharge(getRate(vehicleType), roundedTotal);
+	totalCharge = getTotalCharge(vehicleType, roundedTotal);
 
 	printf("\tPARKING LOT CHARGE\n\n");
 	printVehicleType(vehicleType);
@@ -56,76 +56,50 @@ void getParkingTime(int hourEntered, int hourLeft, int minuteEntered, int minute
 }
 
 int getRoundedTotal(int hour, int minute){
-	if (minute >= 30){
+	if (minute >= 30)
 		return ++hour;
-	}
-	else{
+	else
 		return hour;
-	}
 }
 
 void printVehicleType(char type){
-	if (type == 'C' || type == 'c'){
+	if (type == 'C' || type == 'c')
 		printf("Type of vehicle: Car\n");
-	}
-	if (type == 'B' || type == 'b') {
+	if (type == 'B' || type == 'b')
 		printf("Type of vehicle: Bus\n");
-	}
-	if (type == 'T' || type == 't') {
+	if (type == 'T' || type == 't')
 		printf("Type of vehicle: Truck\n");
-	}
 }
 
-int getRate(char type){
-	if (type == 'C' || type == 'c'){
-		return 1;
-	}
-	else if (type == 'T' || type == 't') {
-		return 2;
-	}
-	else if (type == 'B' || type == 'b'){
-		return 3;
-	}
-	else {
-		return 0;
-	}
-}
-
-double getTotalCharge(int rate, int total){
-	switch (rate) {
-		case 1:
+double getTotalCharge(char vehicleType, int total){
+	switch (toupper(vehicleType)) {
+		case 'C':
 			if (total <= 3){
 				return 0.0;
-				break;
 			}
 			else{
 				return (double) (total - 3.0) * 1.5;
-				break;
 			}
 			break;
-		case 2:
+		case 'B':
 			if (total <= 2){
 				return 1.0;
-				break;
 			}
 			else{
 				return (double) ((total - 2.0) * 2.30) + 1.0;
-				break;
 			}
 			break;
-		case 3:
+		case 'T':
 			if (total <= 1){
 				return 2.0;
-				break;
 			}
 			else{
 				return (double) ((total - 1.0) * 3.70) + 2.0;
-				break;
 			}
 			break;
 		default:
+			printf("Invalid input!");
 			return 0;
 			break;
-
 	}
 }
