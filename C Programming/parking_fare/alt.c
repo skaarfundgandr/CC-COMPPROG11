@@ -63,39 +63,33 @@ int getRoundedTotal(int hour, int minute){
 }
 
 void printVehicleType(char type){
-	if (type == 'C' || type == 'c')
+	if (toupper(type) == 'C')
 		printf("Type of vehicle: Car\n");
-	if (type == 'B' || type == 'b')
+	if (toupper(type) == 'B')
 		printf("Type of vehicle: Bus\n");
-	if (type == 'T' || type == 't')
+	if (toupper(type) == 'T')
 		printf("Type of vehicle: Truck\n");
 }
 
 double getTotalCharge(char vehicleType, int total){
 	switch (toupper(vehicleType)) {
 		case 'C':
-			if (total <= 3){
+			if (total <= 3)
 				return 0.0;
-			}
-			else{
+			else
 				return (double) (total - 3.0) * 1.5;
-			}
 			break;
 		case 'B':
-			if (total <= 2){
+			if (total <= 2)
 				return 1.0;
-			}
-			else{
+			else
 				return (double) ((total - 2.0) * 2.30) + 1.0;
-			}
 			break;
 		case 'T':
-			if (total <= 1){
+			if (total <= 1)
 				return 2.0;
-			}
-			else{
+			else
 				return (double) ((total - 1.0) * 3.70) + 2.0;
-			}
 			break;
 		default:
 			printf("Invalid input!");
