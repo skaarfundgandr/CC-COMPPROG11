@@ -20,17 +20,11 @@ void calculateTheMaximum(int n, int k){
     for (int j = i + 1; j <= n; j++)
     {
       if ((j & i) > maxAND && (j & i) < k)
-      {
         maxAND = j & i;
-      }
       if ((j | i) > maxOR && (j | i) < k)
-      {
         maxOR = j | i;
-      }
       if ((j ^ i) > maxXOR && (j ^ i) < k)
-      {
         maxXOR = j ^ i;
-      }
     }
   }
   printf("%d\n%d\n%d\n", maxAND, maxOR, maxXOR);
