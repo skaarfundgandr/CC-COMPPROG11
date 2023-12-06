@@ -2,38 +2,38 @@
 #include <stdlib.h>
 
 void validate_age(int *age);
-int Sum_Avg_Age(int *age, int *sum);
+int Sum_Avg_Age(int *ages);
 
-int main(int argc, char const *argv[])
+int main()
 {
-	int *stud_age, average, sum = 0;
+	int *stud_age, average;
 
-	stud_age = (int*) malloc(6 * sizeof(int));
+	stud_age = (int*) malloc(sizeof(int) * 6);
 
-	for (int i = 1; i <= 6; ++i)
-	{
-		printf("Enter element %d in array\n", i);
+	for (int i = 0; i < 6; ++i){
+		printf("Enter element %d in array\n", i + 1);
 		scanf("%d", stud_age + i);
 		validate_age(stud_age);
-		sum += *(stud_age + i);
 	}
 
-	average = sum / 6;
-	printf("Average is %d\n", average);
+	average = Sum_Avg_Age(stud_age);
 
 	free(stud_age);
-
+	
+	printf("Average is %d\n", average);
 	return 0;
 }
 
 void validate_age(int *age){
-	if (age < 0){
+	if (age[0] < 0){
 		printf("Invalid input for age!\n");
 		exit(1);
 	}
 }
 
-int Sum_Avg_Age(int *age, int *sum){
-	*sum += *age;
-	return *sum / 6;
+int Sum_Avg_Age(int *ages){
+	int sum;
+	for (int i = 0; i < 6; ++i)
+		sum += ages[i];
+	return sum / 6;
 }
