@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 void validate_age(int val);
-int Sum_Avg_Age(int *age);
+double Sum_Avg_Age(int *age);
 
 int main()
 {
@@ -34,7 +34,7 @@ void validate_age(int val){
 	}
 }
 
-int Sum_Avg_Age(int *age){
+double Sum_Avg_Age(int *age){
 	int sum, val;
 
 	for (int i = 0; i < 6; ++i){
