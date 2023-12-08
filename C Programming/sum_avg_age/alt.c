@@ -12,8 +12,7 @@ int main()
 	for (int i = 0; i < 6; ++i){
 		printf("Enter the value for element %d in array\n", i + 1);
 		scanf("%d", &stud_age[i]);
-		value = stud_age[i];
-		validate_age(value);
+		validate_age(stud_age[i]);
 	}
 
 	average = Sum_Avg_Age(stud_age);
