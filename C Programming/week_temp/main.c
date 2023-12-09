@@ -11,7 +11,7 @@ int main()
 	double day_temp[DAYS_IN_A_WEEK];
 
 	for (int i = 0; i < DAYS_IN_A_WEEK; ++i){
-		printf("Enter temperator for day %d:\n", i + 1);
+		printf("Enter temperature for day %d:\n", i + 1);
 		scanf("%lf", &day_temp[i]);
 		validate_temp(day_temp[i]);
 	}
