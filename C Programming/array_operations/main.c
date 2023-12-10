@@ -30,7 +30,7 @@ void Input_Data(int arr_1[], float arr_2[]){
 void Diff_Sum(int arr_1[], float arr_2[], float arr_3[]){
 	for (int i = 0; i < 5; ++i){
 		for (int j = 5; j > i; --j){
-			if (arr_1[i] > arr_2[j])
+			if ( (float) arr_1[i] > arr_2[j])
 				arr_3[j] = (float) arr_1[i] - arr_2[j];
 			else
 				arr_3[i] = (float) arr_1[i] + arr_2[j];
