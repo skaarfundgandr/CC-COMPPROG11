@@ -2,5 +2,7 @@
 *.pyc
 *.o
 *.save
+*.txt
+*.env
 /__pycache__
 /target
