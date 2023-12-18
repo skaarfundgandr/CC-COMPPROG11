@@ -46,13 +46,9 @@ void getParkingTime(int hourEntered, int hourLeft, int minuteEntered, int minute
 	if (minuteLeft < minuteEntered){
 		--hourLeft;
 		minuteLeft += 60;
-		parkingHour = hourLeft - hourEntered;
-		parkingMinute = minuteLeft - minuteEntered;
 	}
-	else{
-		parkingHour = hourLeft - hourEntered;
-		parkingMinute = minuteLeft - minuteEntered;
-	}
+	parkingHour = hourLeft - hourEntered;
+	parkingMinute = minuteLeft - minuteEntered;
 }
 
 int getRoundedTotal(int hour, int minute){
