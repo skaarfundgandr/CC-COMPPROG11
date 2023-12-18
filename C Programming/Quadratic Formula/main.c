@@ -1,8 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
-
-double squareOf(double num1);
 
 int main()
 {
@@ -13,13 +10,10 @@ int main()
 
     scanf("%lf %lf %lf", &a, &b, &c);
 
-    discriminantFormula = squareOf(b) - (4 * a * c);
+    discriminantFormula = pow(b, 2) - (4 * a * c);
 
-    
     if (discriminantFormula < 0) {
-        root1 = -b + (sqrt(abs(discriminantFormula)) / (2.0 * a));
-        root2 = -b - (sqrt(abs(discriminantFormula)) / (2.0 * a));
-        printf("The roots are imaginary!\nThese are %.2lfi and %.2lfi\n", root1, root2);
+        printf("There ara no real roots\n");
     } 
     else if (a == 0.0 && b == 0.0) {
         printf("There is no real solution!\n");
@@ -34,8 +28,4 @@ int main()
         printf("There are two roots\nThese are %.2lf and %.2lf.\n", root1, root2);
     }
     return 0;
-}
-
-double squareOf(double num1){
-    return num1 * num1;
 }
