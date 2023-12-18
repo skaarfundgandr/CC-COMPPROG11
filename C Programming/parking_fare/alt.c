@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 int parkingHour, parkingMinute;
 
-int getRoundedTotal(int hour, int minute);
 void getParkingTime(int hourEntered, int hourLeft, int minuteEntered, int minuteLeft);
-void printVehicleType(char type);
+int getRoundedTotal(int hour, int minute);
 double getTotalCharge(char vehicleType, int total);
+void printVehicleType(char type);
 
 int main()
 {
@@ -52,19 +53,10 @@ void getParkingTime(int hourEntered, int hourLeft, int minuteEntered, int minute
 }
 
 int getRoundedTotal(int hour, int minute){
-	if (minute >= 30)
+	if (minute > 0)
 		return ++hour;
 	else
 		return hour;
-}
-
-void printVehicleType(char type){
-	if (toupper(type) == 'C')
-		printf("Type of vehicle: Car\n");
-	if (toupper(type) == 'B')
-		printf("Type of vehicle: Bus\n");
-	if (toupper(type) == 'T')
-		printf("Type of vehicle: Truck\n");
 }
 
 double getTotalCharge(char vehicleType, int total){
@@ -89,7 +81,17 @@ double getTotalCharge(char vehicleType, int total){
 			break;
 		default:
 			printf("Invalid input!");
+			exit(1);
 			return 0;
 			break;
 	}
+}
+
+void printVehicleType(char type){
+	if (toupper(type) == 'C')
+		printf("Type of vehicle: Car\n");
+	if (toupper(type) == 'B')
+		printf("Type of vehicle: Bus\n");
+	if (toupper(type) == 'T')
+		printf("Type of vehicle: Truck\n");
 }
