@@ -11,14 +11,12 @@ int main()
     scanf("%lf %lf %lf", &a, &b, &c);
 
     discriminantFormula = pow(b, 2) - (4 * a * c);
-
-    if (discriminantFormula < 0) {
+ 
+    if (discriminantFormula < 0)
         printf("There ara no real roots\n");
-    } 
-    else if (a == 0.0 && b == 0.0) {
+    else if (a == 0.0 && b == 0.0)
         printf("There is no real solution!\n");
-    }
-    else if (a == 0.0) {
+    else if (a == 0.0){
         root = -c / b;
         printf("There is only one root.\nWhich is %.2lf.\n", root);
     }
