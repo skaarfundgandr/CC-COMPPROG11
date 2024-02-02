@@ -21,7 +21,7 @@ int main(){
 		while ((pin != 1020) && attempts <=3){
 			printf("\nINVALID PASSWORD! PLEASE TRY AGAIN\n");
 			printf("ENTER YOUR PIN NUMBER: ");
-			while((i = getchar()) != '\n') {}
+			while((i = getchar()) != '\n' && i != EOF) {}
 			scanf("%d", &pin);
 			if (attempts == 3){
 				printf("\nACCOUNT LOCKED\n");
@@ -46,11 +46,11 @@ int main(){
 				case 2:
 					printf("\nEnter the amount:");
 					scanf("%lu", &withdraw);
-					if ((withdraw % 100) == 0){
-						if (withdraw <= 0){
+					if ((*(int *) &withdraw) < 0){
 							printf("Please input a positive number!\n");
 							abort();
 						}
+					if ((withdraw % 100) == 0){
 						if (withdraw > amount){
 							printf("INSUFFICIENT BALANCE!\n");
 						}
@@ -67,7 +67,7 @@ int main(){
 				case 3:
 					printf("\nEnter the amount: ");
 					scanf("%lu", &deposit);
-					if (deposit <= 0){
+					if ((*(int *) &deposit) < 0){
 						printf("Enter a positive number!\n");
 						abort();
 					}
@@ -84,7 +84,7 @@ int main(){
 					break;
 			}
 			printf("\n\n\nDO U WISH TO HAVE ANOTHER TRANSCATION?(y/n): ");
-			while((i = getchar()) != '\n') {}
+			while((i = getchar()) != '\n' && i != EOF) {}
 			scanf("%c", &transaction);
 			if (tolower(transaction) == 'n'){
 				printf("Thank you for using our ATM service!\n");
