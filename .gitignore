@@ -4,5 +4,6 @@
 *.save
 *.txt
 *.env
+*.class
 /__pycache__
 /target
