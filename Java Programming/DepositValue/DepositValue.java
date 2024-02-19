@@ -8,13 +8,13 @@ public class DepositValue {
 		DecimalFormat decform = new DecimalFormat("$###,###,###.##");
 		System.out.print("Initial deposit\t: ");
 		initialDeposit = scan.nextDouble();
-		System.out.print("\nInterest rate\t: ");
+		System.out.print("Interest rate\t: ");
 		interestRate = scan.nextDouble();
-		System.out.print("\nTimes per year\t: ");
+		System.out.print("Times per year\t: ");
 		timesPerYear = scan.nextDouble();
-		System.out.print("\nNumber of years\t: ");
+		System.out.print("Number of years\t: ");
 		years = scan.nextDouble();
 		value = initialDeposit * Math.pow((1.0 + interestRate / timesPerYear), timesPerYear * years);
-		System.out.println("\nValue: " + decform.format(value));
+		System.out.println("Value: " + decform.format(value));
 	}
 }
