@@ -7,7 +7,7 @@ public class AgeInSeconds{
 		double percentLived;
 
 		Scanner scan = new Scanner(System.in);
-		DecimalFormat percentform = new DecimalFormat("%##.##");
+		DecimalFormat percentform = new DecimalFormat("%###.##");
 		DecimalFormat numform = new DecimalFormat("###,###,###,###");
 
 		System.out.print("Enter your age in years: ");
