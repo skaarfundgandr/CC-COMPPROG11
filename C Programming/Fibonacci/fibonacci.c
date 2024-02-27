@@ -11,10 +11,10 @@ int main()
 {
 	int terms;
 	printf("Enter the number of terms: ");
-	scanf_s("%d", &terms);
-	for (int i = 0; i < terms;) {
-		terms--;
-		printf("%d\n", fibonacci(terms));
+	scanf("%d", &terms);
+	for (int i = 0; i < terms; ++i) {
+		printf("%d ", fibonacci(i));
 	}
+	printf("\n");
 	return 0;
 }
