@@ -25,18 +25,18 @@ int main(int argc, char const *argv[]){
 
     arrIntersect(arr1, arr1Size, arr2, arr2Size);
 
+    arr1 = arr2 = NULL;
+
     return 0;
 }
 
 void arrIntersect(int *arr1, int size1, int *arr2,  int size2){
     int *intersect, intersectSize, elems = 0;
 
-    if (size1 > size2) {
+    if (size1 > size2)
         intersectSize = size1;
-    }
-    else {
+    else
         intersectSize = size2;
-    }
 
     intersect = (int *) malloc(sizeof(int) * intersectSize);
 
@@ -49,8 +49,8 @@ void arrIntersect(int *arr1, int size1, int *arr2,  int size2){
         }
     }
     printf("Intersected values are: ");
-    for (int i = 0; i < elems; ++i) {
+    for (int i = 0; i < elems; ++i)
         printf("%d ", intersect[i]);
-    }
     printf("\n");
+    free(intersect);
 }
