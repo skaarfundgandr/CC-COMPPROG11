@@ -16,11 +16,11 @@ typedef struct book {
 void displayBooks(book_t* list);
 book_t* appendBook(book_t** list, char *title, char *author, char *isbn);
 bool isValid(char *isbn);
-bool checkAvailable(char *isbn, book_t* bookList);
+void setBorrowed(book_t** list, char *isbn);
+void setReturned(book_t** list, char *isbn);
 
 int main(int argc, char const *argv[]){
     book_t *bookList = NULL;
-    book_t b1;
     int choice, c, attempts = 0, isbnAttempts = 0;
     char isbn[MAX_SIZE], title[MAX_SIZE], author[MAX_SIZE];
     do{
@@ -45,28 +45,15 @@ int main(int argc, char const *argv[]){
                 }while (!(isValid(isbn)) && isbnAttempts <= 5);
                 bookList = appendBook(&bookList, title, author, isbn);
                 break;
-            // TODO
             case 2:
                 printf("Enter ISBN:\n");
                 scanf("%s", isbn);
-                // if (b1.isBorrowed) {
-                //     printf("Book is currently unavailable!\n");
-                // }
-                // else{
-                //     b1.isBorrowed = true;
-                // }
+                setBorrowed(&bookList, isbn);
                 break;
-            // TODO
             case 3:
                 printf("Enter ISBN:\n");
                 scanf("%s", isbn);
-                if (b1.isBorrowed) {
-                    printf("Thank you for returning the book\n");
-                    b1.isBorrowed = false;
-                }
-                else{
-                    printf("Book is currently available. Are you sure you entered the correct ISBN?\n");
-                }
+                setReturned(&bookList, isbn);
                 break;
             case 4:
                 displayBooks(bookList);
@@ -145,13 +132,38 @@ bool isValid(char *isbn){
      }
 }
 
-bool checkAvailable(char *isbn, book_t* bookList){
-    book_t* current = bookList;
+void setBorrowed(book_t** list, char *isbn){
+    book_t *current = *list;
 
-    while (current != NULL){
-        if (strcmp(isbn, current->isbn) == 0 && current->isBorrowed == false)
-            return true;
+    while (current != NULL && strcmp(current->isbn, isbn) != 0){
+        if (current->next == NULL && strcmp(current->isbn, isbn) != 0){
+            printf("Invalid isbn!\n");
+        }
         current = current->next;
     }
-    return false;
+    if (current->isBorrowed){
+        printf("Book is currently being borrowed!\n");
+    }
+    else{
+        printf("Please return the book on time.\n");
+        current->isBorrowed = true;
+    }
+}
+
+void setReturned(book_t** list, char *isbn){
+    book_t *current = *list;
+
+    while (current != NULL && strcmp(current->isbn, isbn) != 0){
+        if (current->next == NULL && strcmp(current->isbn, isbn) != 0){
+            printf("Invalid isbn!\n");
+        }
+        current = current->next;
+    }
+    if (current->isBorrowed == false){
+        printf("Book is currently available!\n");
+    }
+    else{
+        printf("Thank you for returning the book!\n");
+        current->isBorrowed = false;
+    }
 }
