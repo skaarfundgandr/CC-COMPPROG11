@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class LastChanceGas{
 	public static void main(String[] args) {
 		int tankCapacity, milesPerGallon, gageReading;
-		float mileage;
 
 		Scanner scan = new Scanner(System.in);
 
