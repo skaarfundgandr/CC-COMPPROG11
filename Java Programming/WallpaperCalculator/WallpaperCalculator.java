@@ -17,8 +17,7 @@ public class WallpaperCalculator{
 		System.out.print("Enter the number of openings in the room: ");
 		openings = scan.nextInt();
 
-		wallpaperArea = 2 * ((roomLength * roomWidth) + (roomWidth * roomHeight) + (roomLength * roomHeight));
-		wallpaperArea -= (2 * (roomLength * roomWidth)); // Subtracts the area of the floor and ceiling from the total
+		wallpaperArea = 2 * ((roomWidth * roomHeight) + (roomLength * roomHeight));
 
 		while (count <= openings){
 			System.out.printf("Enter length of opening %d: ", count);
@@ -31,7 +30,7 @@ public class WallpaperCalculator{
 			++count;
 		}
 
-		wallpaperAmount = Math.round(wallpaperArea / (wallpaperLength * wallpaperWidth));
+		wallpaperAmount = (int) Math.ceil(wallpaperArea / (wallpaperLength * wallpaperWidth));
 
 		System.out.printf("You need %d wallpaper(s) to cover the room\n", wallpaperAmount);
 	}
