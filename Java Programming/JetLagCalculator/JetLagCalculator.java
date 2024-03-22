@@ -40,7 +40,6 @@ public class JetLagCalculator {
 			System.exit(1);
 		}
 
-
 		System.out.printf("Days to recover from jet lag: %s\n", decform.format(daysToRecover));
 	}
 }
