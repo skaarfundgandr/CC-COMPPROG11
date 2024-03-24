@@ -24,6 +24,8 @@ public class LoginSimulator {
 			} else if (username.equals("quit") && password.equals("exit")) {
 				System.out.println("System shutting down");
 				looped = false;
+			} else {
+				System.out.println("Logon failed");
 			}
 		}
 
