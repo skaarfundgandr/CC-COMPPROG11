@@ -22,7 +22,7 @@ public class CreditCardBill {
 			balance -= monthlyPayment;
 			totalPayments += monthlyPayment;
 
-			System.out.printf("Month: %d\tbalance:%12s\ttotal payments:%12s\n", currMonth, decform.format(balance), decform.format(totalPayments));
+			System.out.printf("Month: %d\tbalance: %s\t  total payments: %s\n", currMonth, decform.format(balance), decform.format(totalPayments));
 			++currMonth;
 		}
 	}
