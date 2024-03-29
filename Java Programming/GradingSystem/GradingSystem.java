@@ -12,13 +12,14 @@ public class GradingSystem {
 			if (input > 5.0 || input < 1.0){
 				System.out.printf("Invalid input! Attempt %d of 3\n", attempts);
 				++attempts;
+				if (attempts <= 3)
+					System.out.print("Please enter values between 1.0 and 5.0 (inclusive): ");
 			}
 			else
 				return input;
-			System.out.print("Please enter values between 1.0 and 5.0 (inclusive): ");
 		} while(attempts <= 3);
 		if (attempts > 3) {
-			System.out.println("Insufficient number of attempts!\nSystem exiting...");
+			System.out.println("Insufficient number of attempts!\nProgram exiting...");
 			System.exit(1);
 		}
 
@@ -28,11 +29,11 @@ public class GradingSystem {
 		final float PASSING_GRADE = 3.0f;
 		char choice;
 		byte option;
-		float quiz, labwork, exam, midtermGrade, finalGrade;
-		boolean midtermExists;
+		float quiz, labwork, exam, midtermGrade = 0, finalGrade = 0;
+		boolean midtermExists = false;
 
 		String remarks = new String();
-		DecimalFormat decform = new DecimalFormat("#.#");
+		DecimalFormat decform = new DecimalFormat("#.0");
 
 		System.out.println("GRADING SYSTEM");
 		do{
@@ -65,7 +66,7 @@ public class GradingSystem {
 					System.out.println("Do you want to include the midterm grade in the calculation? (Y or N)");
 					do{
 						choice = scan.next().charAt(0);
-						if (choice.toUpperCase() == 'Y') {
+						if (Character.toUpperCase(choice) == 'Y') {
 							if (midtermExists == false) {
 								System.out.print("Please enter your Midterm Grade: ");
 								midtermGrade = inputData();
@@ -74,25 +75,24 @@ public class GradingSystem {
 								System.out.printf("Do you want to use the previous calculated Midterm Grade (%s)? (Y or N)\n",
 												   decform.format(midtermGrade));
 								choice = scan.next().charAt(0);
-								if (choice.toUpperCase() == 'Y'){
-									System.out.print("Enter your Quiz Grade: ");
-									quiz = inputData();
-									System.out.print("Enter your Labworks Grade: ");
-									labwork = inputData();
-									System.out.print("Enter your Final Exam Grade: ");
-									exam = inputData();
-								}
-								if (choice.toUpperCase() == 'N'){
+								if (Character.toUpperCase(choice) == 'N'){
 									System.out.print("Please enter your Midterm Grade: ");
 									midtermGrade = inputData();
 								}
-								if (choice.toUpperCase() != 'Y' || choice.toUpperCase != 'N')
+								if (Character.toUpperCase(choice) != 'Y' && Character.toUpperCase(choice) != 'N')
 									System.out.println("Invalid choice please enter Y or N!");
 							}
 
-							finalGrade = (float) ((quiz * 0.2) + (exam * 0.4) + (labwork * 0.4) + midtermGrade) / 2.0;
+							System.out.print("Enter your Quiz Grade: ");
+							quiz = inputData();
+							System.out.print("Enter your Labworks Grade: ");
+							labwork = inputData();
+							System.out.print("Enter your Final Exam Grade: ");
+							exam = inputData();
+
+							finalGrade = (float) ((quiz * 0.2) + (exam * 0.4) + (labwork * 0.4) + midtermGrade) / 2.0f;
 						}
-						else if (choice.toUpperCase == 'N'){
+						else if (Character.toUpperCase(choice) == 'N'){
 							System.out.print("Enter your Quiz Grade: ");
 							quiz = inputData();
 							System.out.print("Enter your Labworks Grade: ");
@@ -105,9 +105,9 @@ public class GradingSystem {
 						else{
 							System.out.println("Invalid choice please enter Y or N!");
 						}
-					} while (choice.toUpperCase() != 'Y' || choice.toUpperCase() != 'N');
+					} while (Character.toUpperCase(choice) != 'Y' && Character.toUpperCase(choice) != 'N');
 
-					remarks = finalGrade <= PASSING_GRADE ? "PASSED": "FAILED";
+					remarks = (float) finalGrade <= PASSING_GRADE ? "PASSED": "FAILED";
 
 					System.out.println("Final Grade: " + decform.format(midtermGrade));
 					System.out.println("Remarks: " + remarks);
