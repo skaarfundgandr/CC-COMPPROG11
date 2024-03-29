@@ -39,6 +39,45 @@ public class CharacterCounter {
 				case '?':
 					++numPunct;
 					break;
+				case ';':
+					++numPunct;
+					break;
+				case ':':
+					++numPunct;
+					break;
+				case ',':
+					++numPunct;
+					break;
+				case '_':
+					++numPunct;
+					break;
+				case '-':
+					++numPunct;
+					break;
+				case '\'':
+					++numPunct;
+					break;
+				case '"':
+					++numPunct;
+					break;
+				case '(':
+					++numPunct;
+					break;
+				case ')':
+					++numPunct;
+					break;
+				case '[':
+					++numPunct;
+					break;
+				case ']':
+					++numPunct;
+					break;
+				case '{':
+					++numPunct;
+					break;
+				case '}':
+					++numPunct;
+					break;
 				default:
 					if ((int) str.toUpperCase().charAt(i) >= 65 && str.toUpperCase().charAt(i) < 91){
 						++numConsonants;
