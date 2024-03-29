@@ -13,17 +13,9 @@ public class CharacterCounter {
 		for (int i = 0; i < str.length(); ++i) {
 			switch (str.toLowerCase().charAt(i)) {
 				case 'a':
-					++numVowels;
-					break;
 				case 'e':
-					++numVowels;
-					break;
 				case 'i':
-					++numVowels;
-					break;
 				case 'o':
-					++numVowels;
-					break;
 				case 'u':
 					++numVowels;
 					break;
@@ -31,50 +23,20 @@ public class CharacterCounter {
 					++numSpaces;
 					break;
 				case '!':
-					++numPunct;
-					break;
 				case '.':
-					++numPunct;
-					break;
 				case '?':
-					++numPunct;
-					break;
 				case ';':
-					++numPunct;
-					break;
 				case ':':
-					++numPunct;
-					break;
 				case ',':
-					++numPunct;
-					break;
 				case '_':
-					++numPunct;
-					break;
 				case '-':
-					++numPunct;
-					break;
 				case '\'':
-					++numPunct;
-					break;
 				case '"':
-					++numPunct;
-					break;
 				case '(':
-					++numPunct;
-					break;
 				case ')':
-					++numPunct;
-					break;
 				case '[':
-					++numPunct;
-					break;
 				case ']':
-					++numPunct;
-					break;
 				case '{':
-					++numPunct;
-					break;
 				case '}':
 					++numPunct;
 					break;
