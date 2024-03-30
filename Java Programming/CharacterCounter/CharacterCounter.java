@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class CharacterCounter {
 	public static void main(String[] args) {
 		int numVowels = 0, numConsonants = 0, numSpaces = 0, numPunct = 0;
-		String str = new String();;
+		String str = new String();
 
 		Scanner scan = new Scanner(System.in);
 
