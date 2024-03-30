@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class StringSwitcher{
+public class InternetAcronyms{
     public static void main (String[] args) {
         String phrase;
         char response;
