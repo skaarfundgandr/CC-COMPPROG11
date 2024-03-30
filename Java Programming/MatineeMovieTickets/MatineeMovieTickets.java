@@ -10,7 +10,7 @@ public class MatineeMovieTickets{
     double price = 0;
 
     Scanner scan = new Scanner(System.in);
-    DecimalFormat currencyForm = new DecimalFormat("$###,###,###.00");
+    DecimalFormat currencyForm = new DecimalFormat("$,###.00");
 
     System.out.print("Enter the current time: ");
     time = scan.nextInt();
