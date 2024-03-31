@@ -107,7 +107,7 @@ public class GradingSystem {
 						}
 					} while (Character.toUpperCase(choice) != 'Y' && Character.toUpperCase(choice) != 'N');
 
-					remarks = (float) finalGrade <= PASSING_GRADE ? "PASSED": "FAILED";
+					remarks = finalGrade <= PASSING_GRADE ? "PASSED": "FAILED";
 
 					System.out.println("Final Grade: " + decform.format(midtermGrade));
 					System.out.println("Remarks: " + remarks);
