@@ -79,7 +79,7 @@ book_t* appendBook(book_t** list, char *title, char *author, char *isbn){
     book_t* current = *list;
     book_t* newBook;
 
-    newBook = malloc(sizeof(book_t));
+    newBook = (book_t *) malloc(sizeof(book_t));
 
     strcpy(newBook->title, title);
     strcpy(newBook->author, author);
