@@ -10,7 +10,7 @@ public class Extract {
 			input = scan.nextLine().trim();
 
 			if (input.contains("//")) {
-				System.out.println(input.substring(input.indexOf("//"), input.length() - 1));
+				System.out.println(input.substring(input.indexOf("//")));
 			}
 		}
 	}
