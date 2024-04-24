@@ -24,9 +24,8 @@ public class PasswordChecker {
 					if (hasDigit && hasUpper && hasLower)
 						break;
 				}
-				if (!(hasUpper && hasLower && hasDigit)) {
+				if (!(hasUpper && hasLower && hasDigit))
 					System.out.println("That password is not acceptable\n");
-				}
 			} 
 			else
 				System.out.println("That password is not acceptable\n");
