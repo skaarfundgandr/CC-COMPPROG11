@@ -7,7 +7,7 @@ public class Transformer {
 
 		while (scan.hasNextLine()) {
 			line = scan.nextLine();
-			if (line.contains(":=")){
+			while (line.contains(":=")){
 				line = line.substring(0, line.indexOf(":=")).concat(line.substring(line.indexOf(":=") + 1));
 			}
 			System.out.println(line);
