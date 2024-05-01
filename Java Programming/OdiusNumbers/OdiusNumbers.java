@@ -31,7 +31,7 @@ public class OdiusNumbers {
 			}
 
 			System.out.print("Enter a number: ");
-			num = scan.nextInt();
+			num = scan.nextLong();
 		}
 	}
 }
