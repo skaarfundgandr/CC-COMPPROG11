@@ -6,11 +6,12 @@ public class MaximumIntegersInFile {
 
 		Scanner scan = new Scanner(System.in);
 
-		for (int i = 0; i < 5; ++i) {
+		while (scan.hasNextInt()) {
 			num = scan.nextInt();
 			sum += num;
-			if (num > max)
+			if (num > max) {
 				max = num;
+			}
 		}
 
 		System.out.println("Sum of integers: " + sum);
