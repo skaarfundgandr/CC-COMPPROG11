@@ -23,7 +23,7 @@ public class Weight {
 	public int subAverage(int start, int end){
 		int average, sum = 0;
 
-		for (int i = start - 1; i < end; ++i)
+		for (int i = start; i < end; ++i)
 			sum += data[i];
 
 		average = sum / (end - start);
