@@ -14,8 +14,8 @@ public class HelloObject {
 		this.greeting = init.greeting.concat(" From another object");
 	}
 	// Methods
-	public void greetLooped(int n) {
-		for (int i = 0; i < n; ++i)
+	public void greetLooped() {
+		for (int i = 0; i < greeting.length(); ++i)
 			System.out.println(greeting);
 	}
 	public void morningGreeting() {
