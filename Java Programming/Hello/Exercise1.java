@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 class HelloObject{ // Hello Object class
 	private String greeting;
 	// Constructor
@@ -16,16 +14,9 @@ class HelloObject{ // Hello Object class
 
 public class Exercise1 {
 	public static void main(String[] args) {
-		String greeting;
-
-		Scanner scan = new Scanner(System.in);
 		HelloObject hello;
 
-		System.out.println("Enter greeting:");
-		greeting =  scan.nextLine();
-		System.out.println();
-
-		hello = new HelloObject(greeting);
+		hello = new HelloObject("Hello"); // Create a new HelloObject instance
 
 		hello.greetLooped();
 	}
