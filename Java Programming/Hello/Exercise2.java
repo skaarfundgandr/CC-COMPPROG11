@@ -1,10 +1,10 @@
 class HelloObject {
-	private String greet;
-
+	private String greet; // Instance variable
+	// Constructor
 	public HelloObject(String str){
 		this.greet = str;
 	}
-
+	// Methods
 	public void morningGreeting(){
 		System.out.println("Good morning " + greet + "!");
 	}
@@ -15,10 +15,10 @@ class HelloObject {
 
 public class Exercise2 {
 	public static void main(String[] args) {
-		HelloObject hello;
+		HelloObject hello; // Object Declaration
 
-		hello = new HelloObject("World");
-
+		hello = new HelloObject("World"); // Creates an object instance
+		// Driver code
 		hello.morningGreeting();
 		hello.eveningGreeting();
 	}
