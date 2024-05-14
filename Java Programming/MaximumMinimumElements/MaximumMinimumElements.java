@@ -16,7 +16,7 @@ public class MaximumMinimumElements {
                     min = data[row][col];
             }
         }
-
+        // Output
         System.out.println("max = " + max + "; min = " + min);
     }
 }
