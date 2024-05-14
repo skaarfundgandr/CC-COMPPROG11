@@ -21,6 +21,8 @@ public class MicrowaveMenu {
 			if (hasAlpha) {
 				System.out.print("Enter cook time-> ");
 				cookTime = scan.nextLine();
+			} else if (cookTime.length() == 1){
+				System.out.println("00:0" + cookTime);
 			} else if (cookTime.length() > 2) {
 				System.out.println(cookTime.substring(0, cookTime.length() - 2).concat(":").concat(cookTime.substring(cookTime.length() - 2)));
 			} else{
