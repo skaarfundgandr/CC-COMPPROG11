@@ -6,12 +6,12 @@ public class SumEachRow {
                          {0, 2, 6, 3, -1, -8} };
         int sum;
 
-        for (int i = 0; i < data.length; ++i) {
+        for (int row = 0; row < data.length; ++row) {
             sum = 0;
-            for (int j = 0; j < data[i].length; ++j) {
-                sum += data[i][j];
+            for (int column = 0; column < data[row].length; ++column) {
+                sum += data[row][column];
             }
-            System.out.println("Sum of row " + (i+1) + " is " + sum);
+            System.out.println("Sum of row " + (row+1) + " is " + sum);
         }
 	}
 }
