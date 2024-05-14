@@ -1,3 +1,25 @@
+class WeightObject {
+    private int[] data;
+
+    // Constructor
+    public WeightObject(int[] init){
+        data = new int[init.length];
+
+        for (int i = 0; i < init.length; ++i)
+            data[i] = init[i];
+    }
+    // Computes the average from a range of numbers
+    public int subAverage(int start, int end){
+        int average, sum = 0;
+
+        for (int i = start; i < end; ++i)
+            sum += data[i];
+
+        average = sum / (end - start);
+
+        return average;
+    }
+}
 public class SubrangeDays {
 	public static void main(String[] args) {
         int firstHalfAvg, secondHalfAvg, midpoint;
@@ -6,7 +28,7 @@ public class SubrangeDays {
                     105, 106, 105, 103, 104, 103, 105, 106, 107, 106,
                     105, 105, 104, 104, 103, 102, 102, 101, 100, 102};
 
-        Weight june = new Weight(values);
+        WeightObject june = new WeightObject(values);
 
         midpoint = values.length / 2;
 
