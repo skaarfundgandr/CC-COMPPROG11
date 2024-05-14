@@ -12,15 +12,15 @@ public class SumEachColumn {
         		maxLen = data[row].length;
         	}
         }
-        
+        // Adding up the rows and columns
         for (int column = 0; column < maxLen; ++column) {
         	sum = 0;
         	for (int row = 0; row < maxLen; ++row) {
-        		if (row < data.length && column < data[row].length) {
+        		if (row < data.length && column < data[row].length) { // if statement to prevent out of bounds error
         			sum += data[row][column];
         		}
         	}
-        	System.out.println("sum of column " + (column+1) + " is " + sum);
+        	System.out.println("sum of column " + (column+1) + " is " + sum); // Output
         }
 	}
 }
