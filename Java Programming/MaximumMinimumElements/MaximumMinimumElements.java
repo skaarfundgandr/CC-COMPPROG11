@@ -17,6 +17,5 @@ public class MaximumMinimumElements {
         }
 
         System.out.println("max = " + max + "; min = " + min);
-
     }
 }
