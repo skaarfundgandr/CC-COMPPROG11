@@ -1,4 +1,4 @@
-public class Exercise4 {
+public class SameSum {
 	public static void main(String[] args) {
 		int[] valA = { 13, -22,  82,  17};
 		int[] valB = {  0,   0,   0,   0};

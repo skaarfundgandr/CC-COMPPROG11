@@ -1,4 +1,4 @@
-public class Exercise1 {
+public class ArraySum {
 	public static void main(String[] args) {
 		int[] val = {0, 1, 2, 3};
 		int sum = 0;

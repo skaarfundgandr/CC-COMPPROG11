@@ -1,4 +1,4 @@
-public class Exercise5 {
+public class ReverseOrder {
 	public static void main(String[] args) {
 		int[] val = {0, 1, 2, 3};
 		int temp;

@@ -1,4 +1,4 @@
-public class Exercise3 {
+public class ThreeArrays {
 	public static void main(String[] args) {
 		int[] valA = { 13, -22,  82, 17};
 		int[] valB = {-12,  24, -79, 13};

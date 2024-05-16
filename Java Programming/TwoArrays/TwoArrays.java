@@ -1,4 +1,4 @@
-public class Exercise2 {
+public class TwoArrays {
 	public static void main(String[] args) {
 		int[] val = {13, -4, 82, 17};
 		int[] twice;
